@@ -155,7 +155,7 @@ def usage():
     print ""
 
 def setup_usb():
-    # Tested only works with the Cheeky Dream Thunder
+    # Tested only with the Cheeky Dream Thunder
     global DEVICE 
     DEVICE = usb.core.find(idVendor=0x2123, idProduct=0x1010)
 
