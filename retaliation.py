@@ -46,7 +46,8 @@
 #      after hours for best results!
 #
 #  4.  Setup the Jenkins "notification" plugin. Define a UDP endpoint 
-#      on port 22222.
+#      on port 22222 pointing to the system hosting this script.
+#      Tip: Make sure your firewall is not blocking UDP on this port.
 #
 #  5.  Start listening for failed build events by running the command:
 #          retaliation.py stalk

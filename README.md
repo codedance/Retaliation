@@ -65,7 +65,8 @@ missing file" again!
       best results!
 
   4.  Setup the Jenkins <a href="https://wiki.jenkins-ci.org/display/JENKINS/Notification+Plugin">notification plugin</a>. 
-      Define a `UDP` endpoint on port `22222`.
+      Define a `UDP` endpoint on port `22222` pointing to the system hosting 
+      `retaliation.py`.  *Tip:* Make sure your firewall is not blocking UDP on this port.
 
   5.  Start listening for failed build events by running the command:
 
