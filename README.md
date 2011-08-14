@@ -11,7 +11,7 @@ the offending code monkey.
 
 <img src="http://codedance.github.com/Retaliation/img/launcher.jpg">
 
-### In Death
+### In Dea1th
 
 At a deeper level <strong>Retaliation</strong> is more than just a "simple python script". 
 It's a radical rethink into how to manage software development teams and the software 
@@ -23,21 +23,25 @@ file" again!
 
 ### Testimonials
 
-> Retaliation brought us the productivity improvement pair-programming promised but could 
-> never deliver! We've seen a 22.871% decrease in build breakage since its implementation.
+> <em>Retaliation brought us the productivity improvement pair-programming promised but 
+> could never deliver! We've seen a 22.871% decrease in build breakage since its 
+> implementation.</em>
 > 
-> <em>Will, Chief Code Hacker</em>
+>    *Will, Chief Code Hacker*
 
-> Does what it says on the box. We've seen improvements and we haven't even installed it
-> yet! Just the shear threat has kicked my team's coders into line.
+    
+> <em>Does what it says on the box. We've seen improvements and we haven't even installed it
+> yet! Just the shear threat has kicked my team's coders into line.</em>
 > 
-> <em>Tom, Head Code Captain</em>
+>    *Tom, Head Code Captain*
 
-> Honestly, would you work in a dev team with a Lava Lamp build notifier? What next?
-> Naan Cat mouse mats? Real coders work under the treat of Retaliation! 
+    
+> <em>Honestly, would you work in a dev team with a Lava Lamp build notifier? What next?
+> Nyan Cat mouse mats? Real coders work under the treat of Retaliation!</em>
 > 
-> <em>Matt, Coding Machine</em>
+>    *Matt, Coding Machine*
 
+    
 ### How to use
 
   1.  Mount your Dream Cheeky Thunder missile launcher in a central and 
@@ -45,14 +49,18 @@ file" again!
 
   2.  Copy this script onto the system connected to your missile lanucher.
 
-  3.  Modify your COMMAND_SETS so there is a target defined for each of 
-      your build-braking coders (their user ID as listed in Jenkins).  
+  3.  Modify your COMMAND_SETS in the retaliation.py script to define your targeting 
+      commands for each one of your build-braking coders (their user ID as listed 
+      in Jenkins).  A command set is an array of move and fire commands. It is recommend
+      to start each command set with a "reset" command.  This parks the launcher in a known
+      position (bottom-left).  You can then use "up" and "right" followed by a time (in 
+      milliseconds) to position your fire.
+ 
       You can test a set by calling it with the command:  
 
            `retaliation.py "[developer name]"`
 
-      Trial and error is the best approch. Consider doing this secretly
-      after hours!
+      Trial and error is the best approch. Consider doing this secretly after hours!
 
   4.  Setup the Jenkins "notification" plugin. Define a UDP endpoint 
       on port 22222.
@@ -61,7 +69,7 @@ file" again!
 
            `retaliation.py stalk`
 
-      (Consider setting this up as a boot script)
+      (Consider setting this up as a boot/startup script)
 
   6.  Let the games begin!
 
