@@ -1,4 +1,5 @@
-## Retaliation - A Jenkins "Extreme Feedback" Contraption
+
+## RETALIATION - A Jenkins "Extreme Feedback" Contraption
 
 ### Summary
 
@@ -23,6 +24,7 @@ missing file" again!
 
 ### Testimonials
 
+***
 > <em>Retaliation brought us the productivity improvement pair-programming promised but 
 > could never deliver! We've seen a 22.871% decrease in build breakage since its 
 > implementation.</em>
@@ -77,6 +79,9 @@ missing file" again!
   * Python 2.6+
   * Python PyUSB Support (on Mac use brew to "brew install libusb")
 
-Thanks to the team at <a href="http://www.papercut.com/">PaperCut</a> for "coping a few
-in the head" during testing!
+Thanks to the dev team at <a href="http://www.papercut.com/">PaperCut</a> writing print 
+management software for "coping a few in the head" during testing!
+
+*Tip:* If your dev team is down under and you're finding Retaliation is loosing its affect,
+try dipping each missile in roo poo for some added punch :-)
 
