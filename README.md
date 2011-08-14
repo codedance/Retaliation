@@ -31,15 +31,15 @@ missing file" again!
 > 
 >    **Will, Chief Code Hacker**
 ***
-> <em>Does what it says on the box. I've seen improvements in my team and we haven't even 
-> installed it yet! Just the shear threat has kicked my team's coding into line.</em>
-> 
->    **Tom, Head Code Captain**
-***
 > <em>Honestly, would you work in a dev team with a Lava Lamp build notifier? What next?
 > Nyan Cat mouse mats? Real coders work under the threat of Retaliation!</em>
 > 
 >    **Matt, Coding Machine**
+***
+> <em>Does what it says on the box. I've seen improvements in my team and we haven't even 
+> installed it yet! Just the shear threat has kicked my team's coding into line.</em>
+> 
+>    **Tom, Head Code Captain**
 ***
  
 ### How to Use
@@ -80,6 +80,7 @@ missing file" again!
   * A <a href="http://www.dreamcheeky.com/thunder-missile-launcher">Dream Cheeky Thunder USB Missile Launcher</a>. It may work with other models but only tested with this one.
   * Python 2.6+
   * Python PyUSB Support (on Mac use brew to "brew install libusb")
+  * Should work on Windows, Mac and Linux
 
 Thanks to the dev team at <a href="http://www.papercut.com/">PaperCut</a> (working on print 
 management software) for "coping a few in the head" during testing!
