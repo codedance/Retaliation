@@ -26,18 +26,18 @@ missing file" again!
 
 ***
 > <em>Retaliation brought us the productivity improvement pair-programming promised but 
-> could never deliver! We've seen a 22.871% decrease in build breakage since its 
+> could never deliver! We've seen a 13.37% decrease in build breakage since its 
 > implementation.</em>
 > 
 >    **Will, Chief Code Hacker**
 ***
-> <em>Does what it says on the box. We've seen improvements and we haven't even installed it
-> yet! Just the shear threat has kicked my team's coders into line.</em>
+> <em>Does what it says on the box. I've seen improvements in my team and we haven't even 
+> installed it yet! Just the shear threat has kicked my team's coding into line.</em>
 > 
 >    **Tom, Head Code Captain**
 ***
 > <em>Honestly, would you work in a dev team with a Lava Lamp build notifier? What next?
-> Nyan Cat mouse mats? Real coders work under the treat of Retaliation!</em>
+> Nyan Cat mouse mats? Real coders work under the threat of Retaliation!</em>
 > 
 >    **Matt, Coding Machine**
 ***
@@ -81,9 +81,18 @@ missing file" again!
   * Python 2.6+
   * Python PyUSB Support (on Mac use brew to "brew install libusb")
 
-Thanks to the dev team at <a href="http://www.papercut.com/">PaperCut</a> writing print 
-management software for "coping a few in the head" during testing!
+Thanks to the dev team at <a href="http://www.papercut.com/">PaperCut</a> (working on print 
+management software) for "coping a few in the head" during testing!
 
-*Tip:* If your dev team is down under and you're finding Retaliation is loosing its effect,
-try dipping each missile in roo poo for some added punch :-)
+### Tips
+
+  * Carefully select the mounting location. Pick a central location in your office space. 
+    Also consider sticking down the launcher using double-sided tape to lock it's position.
+
+  * If your dev team is down under and you're finding Retaliation is loosing its 
+    effect, try dipping each missile in roo poo for some added punch :-)
+
+  * If your build breaking perpetrator is at point-blank range, for health and safety
+    reasons we suggest targeting their keyboard or monitor rather than their head.
+
 
