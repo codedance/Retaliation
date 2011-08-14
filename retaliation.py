@@ -17,31 +17,40 @@
 
 ############################################################################
 # 
-# A Jenkins "Extreme Feedback" Contraption
+# RETALIATION - A Jenkins "Extreme Feedback" Contraption
 #
 #    Lava Lamps are for pussies! Retaliate to a broken build with a barrage 
 #    of foam missiles.
 #
 # Steps to use:
 #
-#  1.  Mount your Dream Cheeky Thunder missile launcher in a central and 
+#  1.  Mount your Dream Cheeky Thunder USB missile launcher in a central and 
 #      fixed location.
 #
 #  2.  Copy this script onto the system connected to your missile lanucher.
 #
-#  3.  Modify your COMMAND_SETS so there is a target defined for each of 
-#      your build-braking coders (their user ID as listed in Jenkins).  
-#      You can test a set by calling it with the command:  
-#          retaliation.py "[developer name]"
-#      Trial and error is the best approch. Consider doing this secretly
-#      after hours!
+#  3.  Modify your `COMMAND_SETS` in the `retaliation.py` script to define 
+#      your targeting commands for each one of your build-braking coders 
+#      (their user ID as listed in Jenkins).  A command set is an array of 
+#      move and fire commands. It is recommend to start each command set 
+#      with a "reset" command.  This parks the launcher in a known position 
+#      (bottom-left).  You can then use "up" and "right" followed by a 
+#      time (in milliseconds) to position your fire.
+# 
+#      You can test a set by calling retaliation.py with the target name. 
+#      e.g.:  
+#
+#           retaliation.py "[developer's user name]"
+#
+#      Trial and error is the best approch. Consider doing this secretly 
+#      after hours for best results!
 #
 #  4.  Setup the Jenkins "notification" plugin. Define a UDP endpoint 
 #      on port 22222.
 #
 #  5.  Start listening for failed build events by running the command:
 #          retaliation.py stalk
-#      (Consider setting this up as a boot script)
+#      (Consider setting this up as a boot/startup script)
 #
 #  6.  Let the games begin!
 #
@@ -69,41 +78,53 @@ import usb.util
 
 #
 # Define a dictionary of "command sets" that map usernames to a sequence 
-# of commands to target the user.  It's suggested that each set started and 
-# end with a "zero" command. The timing is in milli-seconds. 
+# of commands to target the user (e.g their desk/workstation).  It's 
+# suggested that each set start and end with a "zero" command so it's
+# always parked in a known reference location. The timing on move commands
+# is milli-seconds. The number after "fire" denotes the number of rockets
+# to shoot.
 #
 COMMAND_SETS = {
-    "will.rayner" : (
-        ("zero", 0),
+    "will" : (
+        ("zero", 0), # Zero/Park at bottom-left
         ("right", 2200),
         ("up", 600),
+        ("fire", 4), # Fire the full set of 4
+        ("zero", 0), # Park after use.
+    ),
+    "tom" : (
+        ("zero", 0), 
+        ("right", 3600),
+        ("up", 700),
         ("fire", 4),
         ("zero", 0),
     ),
-    "chris" : (
-        ("right", 2200),
-        ("pause", 2000),
+    "chris" : (      # That's me - just dance around and missfire!
+        ("zero", 0),
+        ("right", 5200),
         ("up", 500),
+        ("pause", 5000),
         ("left", 2200),
         ("down", 500),
-        ("zero", 0),
+        ("fire", 1),
     )
 }
 
 #
-# The UDP port to listen to Jenkins events on (supplied by Jenkins 
-# "notification" plugin)
+# The UDP port to listen to Jenkins events on (events are generated/supplied 
+# by Jenkins "notification" plugin)
 #
 JENKINS_NOTIFICATION_UDP_PORT   = 22222
 
 #
-# The URL of your Jenkins server - used to callback to determin who broke 
+# The URL of your Jenkins server - used to callback to determine who broke 
 # the build.
 #
 JENKINS_SERVER                  = "http://localhost:23456"
 
 ##########################  ENG CONFIG  #########################
 
+# The code...
 
 # Protocol command bytes
 DOWN    = 0x01
@@ -121,7 +142,7 @@ def usage():
     print "     stalk - sit around waiting for a Jenkins CI failed build"
     print "             notification, then attack the perpetrator."
     print ""
-    print "     command_set - run a defined command_set (i.e. target)"
+    print "     command_set - run a defined command_set (i.e. target a user)"
     print ""
     print "     up      - move up <value> milliseconds"
     print "     down    - move down <value> milliseconds"
@@ -172,7 +193,7 @@ def run_command(command, value):
     elif command == "fire" or command == "shoot":
         if value < 1 or value > 4:
             value = 1
-        # Stabilize prior to shot and allow reload time after
+        # Stabilize prior to the shot, then allow for reload time after.
         time.sleep(0.5)
         for i in range(value):
             send_cmd(FIRE)
@@ -199,7 +220,7 @@ def jenkins_target_user(user):
 
 
 def jenkins_get_responsible_user(job_name):
-    # Call back to Jenkins and determin who broke the build.
+    # Call back to Jenkins and determin who broke the build. (Hacky)
     # We do this by crudly parsing the changes on the last failed build
 
     changes_url = JENKINS_SERVER + "/job/" + job_name + "/lastFailedBuild/changes"

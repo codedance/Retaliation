@@ -1,14 +1,14 @@
 
 ## RETALIATION - A Jenkins "Extreme Feedback" Contraption
 
+*Lava Lamps are for pussies! Retaliate to a broken build with a barrage of foam missiles.*
+
 ### Summary
 
 Retaliation is a <a href="http://jenkins-ci.org/">Jenkins CI</a> build monitor that 
 automatically coordinates a foam missile counter-attack against the developer who "breaks 
-the build". It does this by playing a preprogrammed control sequence to a *Cheeky Dream USB 
-Thunder Foam Missle Lanucher* to target the offending code monkey.
-
-**Lava Lamps are for pussies. You need Retaliation!**
+the build". It does this by playing a preprogrammed control sequence to a *USB Thunder 
+Foam Missle Lanucher* to target the offending code monkey.
 
 <img src="https://github.com/codedance/Retaliation/raw/master/img/launcher.jpg">
 
@@ -44,10 +44,11 @@ missing file" again!
  
 ### How to Use
 
-  1.  Mount your Dream Cheeky Thunder missile launcher in a central and 
+  1.  Mount your USB Dream Cheeky Thunder missile launcher in a central and 
       fixed location.
 
-  2.  Copy this script onto the system connected to your missile lanucher.
+  2.  Download the <a href="https://github.com/codedance/Retaliation/raw/master/retaliation.py">retaliation.py</a> 
+      script onto the system connected to your missile lanucher.
 
   3.  Modify your `COMMAND_SETS` in the `retaliation.py` script to define your targeting 
       commands for each one of your build-braking coders (their user ID as listed 
@@ -60,7 +61,8 @@ missing file" again!
 
            retaliation.py "[developer's user name]"
 
-      Trial and error is the best approch. Consider doing this secretly after hours!
+      Trial and error is the best approch. Consider doing this secretly after hours for
+      best results!
 
   4.  Setup the Jenkins <a href="https://wiki.jenkins-ci.org/display/JENKINS/Notification+Plugin">notification plugin</a>. 
       Define a `UDP` endpoint on port `22222`.
@@ -82,6 +84,6 @@ missing file" again!
 Thanks to the dev team at <a href="http://www.papercut.com/">PaperCut</a> writing print 
 management software for "coping a few in the head" during testing!
 
-*Tip:* If your dev team is down under and you're finding Retaliation is loosing its affect,
+*Tip:* If your dev team is down under and you're finding Retaliation is loosing its effect,
 try dipping each missile in roo poo for some added punch :-)
 
