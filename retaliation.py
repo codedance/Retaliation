@@ -60,6 +60,7 @@
 #   * A Dream Cheeky Thunder USB Missile Launcher
 #   * Python 2.6+
 #   * Python PyUSB Support (on Mac use brew to "brew install libusb")
+#   * Should work on Windows, Mac and Linux
 #
 #  Author: Chris Dance <chris.dance@papercut.com>
 #
@@ -212,7 +213,7 @@ def jenkins_target_user(user):
     match = False
     for key in COMMAND_SETS:
         if key.lower() == user.lower():
-            # We have a command set that targets our user to got for it!
+            # We have a command set that targets our user so got for it!
             run_command_set(COMMAND_SETS[key])
             match = True
             break
