@@ -89,9 +89,14 @@ management software) for "coping a few in the head" during testing!
 ### Tips
 
   * Carefully select the mounting location. Pick a central location in your office space. 
-    Also consider sticking down the launcher using double-sided tape to lock it's position.
+    Endeavor to maximize angular separation between targets. This will reduce the likelihood
+    of friendly fire incidents... but then again this is comes with the territory and is all
+    part of the fun!
+    
+  * Consider sticking down the launcher using double-sided tape to lock its position. This
+    reduces the chase of using a physical hack to disrupt the coordinate targeting system.
 
-  * If your dev team is down under and you're finding Retaliation is loosing its 
+  * If your dev team is Down Under and you're finding Retaliation is loosing its 
     effect, try dipping each missile in roo poo for some added punch :-)
 
   * If your build breaking perpetrator is at point-blank range, for health and safety
