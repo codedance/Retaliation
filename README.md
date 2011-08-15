@@ -7,8 +7,8 @@
 
 Retaliation is a <a href="http://jenkins-ci.org/">Jenkins CI</a> build monitor that 
 automatically coordinates a foam missile counter-attack against the developer who "breaks 
-the build". It does this by playing a preprogrammed control sequence to a *USB Thunder 
-Foam Missle Lanucher* to target the offending code monkey.
+the build". It does this by playing a pre-programmed control sequence to a *USB Thunder 
+Foam Missile Launcher* to target the offending code monkey.
 
 <img src="https://github.com/codedance/Retaliation/raw/master/img/launcher.jpg">
 
@@ -48,7 +48,7 @@ missing file" again!
       fixed location.
 
   2.  Download the <a href="https://github.com/codedance/Retaliation/raw/master/retaliation.py">retaliation.py</a> 
-      script onto the system connected to your missile lanucher.
+      script onto the system connected to your missile launcher.
 
   3.  Modify your `COMMAND_SETS` in the `retaliation.py` script to define your targeting 
       commands for each one of your build-braking coders (their user ID as listed 
@@ -61,7 +61,7 @@ missing file" again!
 
            python retaliation.py "[developer's user name]"
 
-      Trial and error is the best approch. Consider doing this secretly after hours for
+      Trial and error is the best approach. Consider doing this secretly after hours for
       best results!
 
   4.  Setup the Jenkins <a href="https://wiki.jenkins-ci.org/display/JENKINS/Notification+Plugin">notification plugin</a>. 
@@ -72,7 +72,7 @@ missing file" again!
 
            python retaliation.py stalk
 
-      (Consider setting this up as a boot/startup script. On Windows start with pythonw.exe
+      (Consider setting this up as a boot/startup script. On Windows start with `pythonw.exe`
       to keep it running hidden in the background.)
 
   6.  Let the games begin!
@@ -96,7 +96,8 @@ management software) for "coping a few in the head" during testing!
     part of the fun!
     
   * Consider sticking down the launcher using double-sided tape to lock its position. This
-    reduces the chase of using a physical hack to disrupt the coordinate targeting system.
+    reduces the chance of someone using a "physical hack" to disrupt the coordinate 
+   targeting system.
 
   * If your dev team is Down Under and you're finding Retaliation is loosing its 
     effect, try dipping each missile in roo poo for some added punch :-)
