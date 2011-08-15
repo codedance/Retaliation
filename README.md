@@ -44,8 +44,8 @@ missing file" again!
  
 ### How to Use
 
-  1.  Mount your USB Dream Cheeky Thunder missile launcher in a central and 
-      fixed location.
+  1.  Mount your <a href="http://www.dreamcheeky.com/thunder-missile-launcher">Dream Cheeky Thunder USB Missile Launcher</a> 
+      in a central and fixed location.
 
   2.  Download the <a href="https://github.com/codedance/Retaliation/raw/master/retaliation.py">retaliation.py</a> 
       script onto the system connected to your missile launcher.
