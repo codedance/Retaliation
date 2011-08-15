@@ -59,7 +59,7 @@ missing file" again!
  
       You can test a set by calling retaliation.py with the target name. e.g.:  
 
-           retaliation.py "[developer's user name]"
+           python retaliation.py "[developer's user name]"
 
       Trial and error is the best approch. Consider doing this secretly after hours for
       best results!
@@ -70,15 +70,17 @@ missing file" again!
 
   5.  Start listening for failed build events by running the command:
 
-           retaliation.py stalk
+           python retaliation.py stalk
 
-      (Consider setting this up as a boot/startup script)
+      (Consider setting this up as a boot/startup script. On Windows start with pythonw.exe
+      to keep it running hidden in the background.)
 
   6.  Let the games begin!
 
 ####  Requirements:
 
-  * A <a href="http://www.dreamcheeky.com/thunder-missile-launcher">Dream Cheeky Thunder USB Missile Launcher</a>. It may work with other models but only tested with this one.
+  * A <a href="http://www.dreamcheeky.com/thunder-missile-launcher">Dream Cheeky Thunder USB Missile Launcher</a>. 
+    It may work with other models but I've only tested with this one.
   * Python 2.6+
   * Python PyUSB Support (on Mac use brew to "brew install libusb")
   * Should work on Windows, Mac and Linux
@@ -102,4 +104,16 @@ management software) for "coping a few in the head" during testing!
   * If your build breaking perpetrator is at point-blank range, for health and safety
     reasons we suggest targeting their keyboard or monitor rather than their head.
 
+  * If you have a wide area to cover, consider multiple missile launches (e.g. cluster
+    support!). Set the script up on multiple machines and configure multiple endpoint 
+    notifications in Jenkins.
 
+  * To get this working on Windows, you'll need to install 
+    <a href="http://sourceforge.net/apps/trac/pyusb/">PyUSB</a> and
+    <a href="http://sourceforge.net/apps/trac/libusb-win32/wiki">libusb-win32</a>.
+    This can be a little tricky but if you've mastered CI build scripts then this
+    should be easy!
+
+### Future
+
+  * Should we also make a version compatible with Hudson? :-)

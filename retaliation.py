@@ -51,7 +51,9 @@
 #
 #  5.  Start listening for failed build events by running the command:
 #          retaliation.py stalk
-#      (Consider setting this up as a boot/startup script)
+#      (Consider setting this up as a boot/startup script. On Windows 
+#      start with pythonw.exe to keep it running hidden in the 
+#      background.)
 #
 #  6.  Let the games begin!
 #
@@ -59,10 +61,13 @@
 #  Requirements:
 #   * A Dream Cheeky Thunder USB Missile Launcher
 #   * Python 2.6+
-#   * Python PyUSB Support (on Mac use brew to "brew install libusb")
+#   * Python PyUSB Support and its dependencies 
+#      http://sourceforge.net/apps/trac/pyusb/
+#      (on Mac use brew to "brew install libusb")
 #   * Should work on Windows, Mac and Linux
 #
-#  Author: Chris Dance <chris.dance@papercut.com>
+#  Author:  Chris Dance <chris.dance@papercut.com>
+#  Version: 1.0 : 2011-08-15
 #
 ############################################################################
 
@@ -88,16 +93,16 @@ import usb.util
 #
 COMMAND_SETS = {
     "will" : (
-        ("zero", 0), # Zero/Park at bottom-left
-        ("right", 2200),
-        ("up", 600),
-        ("fire", 4), # Fire the full set of 4
-        ("zero", 0), # Park after use.
+        ("zero", 0), # Zero/Park to know point (bottom-left)
+        ("right", 3250),
+        ("up", 540),
+        ("fire", 4), # Fire a full barrage of 4 missiles
+        ("zero", 0), # Park after use for next time
     ),
     "tom" : (
         ("zero", 0), 
-        ("right", 3600),
-        ("up", 700),
+        ("right", 4400),
+        ("up", 900),
         ("fire", 4),
         ("zero", 0),
     ),
@@ -109,7 +114,7 @@ COMMAND_SETS = {
         ("left", 2200),
         ("down", 500),
         ("fire", 1),
-    )
+    ),
 }
 
 #
@@ -122,7 +127,7 @@ JENKINS_NOTIFICATION_UDP_PORT   = 22222
 # The URL of your Jenkins server - used to callback to determine who broke 
 # the build.
 #
-JENKINS_SERVER                  = "http://localhost:23456"
+JENKINS_SERVER                  = "http://192.168.1.100:23456"
 
 ##########################  ENG CONFIG  #########################
 
@@ -239,7 +244,7 @@ def jenkins_get_responsible_user(job_name):
 def jenkins_wait_for_event():
 
     # Data in the format: 
-    #   {"name":"Project", "url":"JobUrl", "build":{"number":1, "phase":"STARTED", "status":"FAILED" }}
+    #   {"name":"Project", "url":"JobUrl", "build":{"number":1, "phase":"STARTED", "status":"FAILURE" }}
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.bind(('', JENKINS_NOTIFICATION_UDP_PORT))
@@ -248,7 +253,9 @@ def jenkins_wait_for_event():
         data, addr = sock.recvfrom(8 * 1024)
         try:
             notification_data = json.loads(data)
-            if notification_data["build"]["status"] == "FAILED":
+            status = notification_data["build"]["status"].upper()
+            phase  = notification_data["build"]["phase"].upper()
+            if phase == "FINISHED" and status.startswith("FAIL"):
                 target = jenkins_get_responsible_user(notification_data["name"])
                 if target == None:
                     print "WARNING: Could not identify the user who broke the build!"
