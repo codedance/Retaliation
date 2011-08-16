@@ -75,7 +75,7 @@ missing file" again!
       (Consider setting this up as a boot/startup script. On Windows start with `pythonw.exe`
       to keep it running hidden in the background.)
 
-  6.  Let the games begin!
+  6.  Wait for DEFCON 1 - Let the war games begin!
 
 ####  Requirements:
 
