@@ -118,3 +118,18 @@ management software) for "coping a few in the head" during testing!
 ### Future
 
   * Should we also make a version compatible with Hudson? :-)
+
+### Other Uses
+ 
+`retaliation.py` also doubles as a command-line scripting API for the *Dream Cheeky 
+USB Missile Launcher*.  You can invoke it to control the device from a script or 
+command-line as follows:
+
+      retaliation.py reset
+      retaliation.py right 3000
+      retaliation.py up 700
+      retaliation.py fire 1
+
+If you do come up with some other cool uses or ideas for retaliation, please share 
+your story!
+        
