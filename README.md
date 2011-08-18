@@ -7,8 +7,8 @@
 
 Retaliation is a <a href="http://jenkins-ci.org/">Jenkins CI</a> build monitor that 
 automatically coordinates a foam missile counter-attack against the developer who "breaks 
-the build". It does this by playing a pre-programmed control sequence to a *USB Thunder 
-Foam Missile Launcher* to target the offending code monkey.
+the build". It does this by playing a pre-programmed control sequence to a *USB Foam 
+Missile Launcher* to target the offending code monkey.
 
 <img src="https://github.com/codedance/Retaliation/raw/master/img/launcher.jpg">
 
