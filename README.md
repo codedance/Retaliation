@@ -10,7 +10,7 @@ automatically coordinates a foam missile counter-attack against the developer wh
 the build". It does this by playing a pre-programmed control sequence to a *USB Thunder 
 Foam Missile Launcher* to target the offending code monkey.
 
-<img src="https://github.com/codedance/Retaliation/raw/master/img/launcher.jpg" />&nbsp;<a href="http://www.youtube.com/watch?v=1EGk2rvZe8A"><img src="https://github.com/codedance/Retaliation/raw/master/img/demo-video.jpg" /></a>
+<img src="https://github.com/codedance/Retaliation/raw/master/img/launcher.jpg" />&nbsp;&nbsp;&nbsp;<a href="http://www.youtube.com/watch?v=1EGk2rvZe8A"><img src="https://github.com/codedance/Retaliation/raw/master/img/demo-video.jpg" /></a>
 
 ### In Detail
 
