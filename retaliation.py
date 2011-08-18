@@ -102,7 +102,7 @@ COMMAND_SETS = {
     "tom" : (
         ("zero", 0), 
         ("right", 4400),
-        ("up", 900),
+        ("up", 200),
         ("fire", 4),
         ("zero", 0),
     ),
