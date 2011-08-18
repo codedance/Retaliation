@@ -33,7 +33,7 @@
 #      your targeting commands for each one of your build-braking coders 
 #      (their user ID as listed in Jenkins).  A command set is an array of 
 #      move and fire commands. It is recommend to start each command set 
-#      with a "reset" command.  This parks the launcher in a known position 
+#      with a "zero" command.  This parks the launcher in a known position 
 #      (bottom-left).  You can then use "up" and "right" followed by a 
 #      time (in milliseconds) to position your fire.
 # 
@@ -196,7 +196,7 @@ def run_command(command, value):
         send_move(UP, value)
     elif command == "down":
         send_move(DOWN, value)
-    elif command == "zero" or command == "park":
+    elif command == "zero" or command == "park" or command == "reset":
         # Move to bottom-left
         send_move(DOWN, 2000)
         send_move(LEFT, 8000)

@@ -56,7 +56,7 @@ in this video</a>.
   3.  Modify your `COMMAND_SETS` in the `retaliation.py` script to define your targeting 
       commands for each one of your build-braking coders (their user ID as listed 
       in Jenkins).  A command set is an array of move and fire commands. It is recommend
-      to start each command set with a "reset" command.  This parks the launcher in a known
+      to start each command set with a "zero" command.  This parks the launcher in a known
       position (bottom-left).  You can then use "up" and "right" followed by a time (in 
       milliseconds) to position your fire.
  
