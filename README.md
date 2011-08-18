@@ -10,7 +10,7 @@ automatically coordinates a foam missile counter-attack against the developer wh
 the build". It does this by playing a pre-programmed control sequence to a *USB Foam 
 Missile Launcher* to target the offending code monkey.
 
-<img src="https://github.com/codedance/Retaliation/raw/master/img/launcher.jpg">
+<img src="https://github.com/codedance/Retaliation/raw/master/img/launcher.jpg" />&nbsp;&nbsp;&nbsp;<a href="http://www.youtube.com/watch?v=1EGk2rvZe8A"><img src="https://github.com/codedance/Retaliation/raw/master/img/demo-video.jpg" /></a>
 
 ### In Detail
 
@@ -41,6 +41,9 @@ missing file" again!
 > 
 >    **Tom, Head Code Captain**
 ***
+
+You can see *Retaliation* in action <a href="http://www.youtube.com/watch?v=1EGk2rvZe8A">
+in this video</a>.
  
 ### How to Use
 
@@ -75,7 +78,7 @@ missing file" again!
       (Consider setting this up as a boot/startup script. On Windows start with `pythonw.exe`
       to keep it running hidden in the background.)
 
-  6.  Let the games begin!
+  6.  Wait for DEFCON 1 - Let the war games begin!
 
 ####  Requirements:
 
@@ -118,3 +121,18 @@ management software) for "coping a few in the head" during testing!
 ### Future
 
   * Should we also make a version compatible with Hudson? :-)
+
+### Other Uses
+ 
+`retaliation.py` also doubles as a command-line scripting API for the *Dream Cheeky 
+USB Missile Launcher*.  You can invoke it to control the device from a script or 
+command-line as follows:
+
+      retaliation.py reset
+      retaliation.py right 3000
+      retaliation.py up 700
+      retaliation.py fire 1
+
+If you do come up with some other cool uses or ideas for retaliation, please share 
+your story!
+        

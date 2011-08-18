@@ -55,7 +55,7 @@
 #      start with pythonw.exe to keep it running hidden in the 
 #      background.)
 #
-#  6.  Let the games begin!
+#  6.  Wait for DEFCON 1 - Let the war games begin!
 #
 #
 #  Requirements:
@@ -102,7 +102,7 @@ COMMAND_SETS = {
     "tom" : (
         ("zero", 0), 
         ("right", 4400),
-        ("up", 900),
+        ("up", 200),
         ("fire", 4),
         ("zero", 0),
     ),
@@ -144,21 +144,26 @@ STOP    = 0x20
 DEVICE = None
 
 def usage():
-    print "Usage: [command] [value]"
+    print "Usage: retaliation.py [command] [value]"
+    print ""
     print "   commands:"
     print "     stalk - sit around waiting for a Jenkins CI failed build"
-    print "             notification, then attack the perpetrator."
+    print "             notification, then attack the perpetrator!"
     print ""
-    print "     command_set - run a defined command_set (i.e. target a user)"
+    print "     up    - move up <value> milliseconds"
+    print "     down  - move down <value> milliseconds"
+    print "     right - move right <value> milliseconds"
+    print "     left  - move left <value> milliseconds"
+    print "     fire  - fire <value> times (between 1-4)"
+    print "     zero  - park at zero position (bottom-left)"
+    print "     pause - pause <value> milliseconds"
     print ""
-    print "     up      - move up <value> milliseconds"
-    print "     down    - move down <value> milliseconds"
-    print "     right   - move right <value> milliseconds"
-    print "     left    - move left <value> milliseconds"
-    print "     fire    - fire <value> times (between 1-4)"
-    print "     zero    - park at zero position (bottom-left)"
-    print "     pause   - pause <value> milliseconds"
+    print "     <command_set_name> - run/test a defined COMMAND_SET"
+    print "             e.g. run:"
+    print "                  retalition.py 'chris'"
+    print "             to test targeting of chris as defined in your command set."
     print ""
+
 
 def setup_usb():
     # Tested only with the Cheeky Dream Thunder
