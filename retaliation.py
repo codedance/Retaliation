@@ -72,6 +72,7 @@
 ############################################################################
 
 import sys
+import platform
 import time
 import socket
 import urllib
@@ -114,6 +115,7 @@ COMMAND_SETS = {
         ("left", 2200),
         ("down", 500),
         ("fire", 1),
+        ("zero", 0),
     ),
 }
 
@@ -173,6 +175,13 @@ def setup_usb():
     if DEVICE is None:
         raise ValueError('Missile device not found')
 
+    # On Linux we need to detach usb HID first
+    if "Linux" == platform.system():
+        try:
+            DEVICE.detach_kernel_driver(0)
+        except Exception, e:
+            pass # already unregistered    
+
     DEVICE.set_configuration()
 
 
@@ -221,6 +230,8 @@ def run_command_set(commands):
 
 def jenkins_target_user(user):
     match = False
+    # Not efficient but our user list is probably less than 1k.
+    # Do a case insenstive search for convenience.
     for key in COMMAND_SETS:
         if key.lower() == user.lower():
             # We have a command set that targets our user so got for it!
