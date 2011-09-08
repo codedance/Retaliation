@@ -250,7 +250,7 @@ def jenkins_get_responsible_user(job_name):
     changedata = urllib.urlopen(changes_url).read()
 
     # Look for the /user/[name] link
-    m = re.compile('"/user/([^/"]+)').search(changedata)
+    m = re.compile('/user/([^/"]+)').search(changedata)
     if m:
         return m.group(1)
     else:
