@@ -1,4 +1,3 @@
-
 ## RETALIATION - A Jenkins "Extreme Feedback" Contraption
 
 *Lava Lamps are for pussies! Retaliate to a broken build with a barrage of foam missiles.*
@@ -37,7 +36,7 @@ missing file" again!
 >    **Matt, Coding Machine**
 ***
 > <em>Does what it says on the box. I've seen improvements in my team and we haven't even 
-> installed it yet! Just the shear threat has kicked my team's coding into line.</em>
+> installed it yet! Just the sheer threat has kicked my team's coding into line.</em>
 > 
 >    **Tom, Head Code Captain**
 ***
