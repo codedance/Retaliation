@@ -162,7 +162,7 @@ def usage():
     print ""
     print "     <command_set_name> - run/test a defined COMMAND_SET"
     print "             e.g. run:"
-    print "                  retalition.py 'chris'"
+    print "                  retaliation.py 'chris'"
     print "             to test targeting of chris as defined in your command set."
     print ""
 
