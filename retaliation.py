@@ -78,6 +78,8 @@ import socket
 import urllib
 import re
 import json
+import urllib2
+import base64
 
 import usb.core
 import usb.util
@@ -130,6 +132,8 @@ JENKINS_NOTIFICATION_UDP_PORT   = 22222
 # the build.
 #
 JENKINS_SERVER                  = "http://192.168.1.100:23456"
+HTTPAUTH_USER                   = ""
+HTTPAUTH_PASS                   = ""
 
 ##########################  ENG CONFIG  #########################
 
@@ -241,13 +245,22 @@ def jenkins_target_user(user):
     if not match:
         print "WARNING: No target command set defined for user %s" % user
 
+def read_url(url):
+    request = urllib2.Request(url)
+
+    if HTTPAUTH_USER and HTTPAUTH_PASS:
+        authstring = base64.encodestring('%s:%s' % (HTTPAUTH_USER, HTTPAUTH_PASS))
+        authstring = authstring.replace('\n', '')
+        request.add_header("Authorization", "Basic %s" % authstring)
+
+    return urllib2.urlopen(request).read()
 
 def jenkins_get_responsible_user(job_name):
     # Call back to Jenkins and determin who broke the build. (Hacky)
     # We do this by crudly parsing the changes on the last failed build
-
+    
     changes_url = JENKINS_SERVER + "/job/" + job_name + "/lastFailedBuild/changes"
-    changedata = urllib.urlopen(changes_url).read()
+    changedata = read_url(changes_url)
 
     # Look for the /user/[name] link
     m = re.compile('/user/([^/"]+)').search(changedata)
@@ -255,7 +268,6 @@ def jenkins_get_responsible_user(job_name):
         return m.group(1)
     else:
         return None
-
 
 def jenkins_wait_for_event():
 
