@@ -75,7 +75,6 @@ import sys
 import platform
 import time
 import socket
-import urllib
 import re
 import json
 import urllib2
@@ -132,6 +131,10 @@ JENKINS_NOTIFICATION_UDP_PORT   = 22222
 # the build.
 #
 JENKINS_SERVER                  = "http://192.168.1.100:23456"
+
+#
+# If you're Jenkins server is secured by HTTP basic auth, sent the
+# username and password here.  Else leave this blank.
 HTTPAUTH_USER                   = ""
 HTTPAUTH_PASS                   = ""
 
@@ -245,6 +248,7 @@ def jenkins_target_user(user):
     if not match:
         print "WARNING: No target command set defined for user %s" % user
 
+
 def read_url(url):
     request = urllib2.Request(url)
 
@@ -254,6 +258,7 @@ def read_url(url):
         request.add_header("Authorization", "Basic %s" % authstring)
 
     return urllib2.urlopen(request).read()
+
 
 def jenkins_get_responsible_user(job_name):
     # Call back to Jenkins and determin who broke the build. (Hacky)
@@ -268,6 +273,7 @@ def jenkins_get_responsible_user(job_name):
         return m.group(1)
     else:
         return None
+
 
 def jenkins_wait_for_event():
 
