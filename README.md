@@ -101,8 +101,6 @@ management software) for "coping a few in the head" during testing!
     reduces the chance of someone using a "physical hack" to disrupt the coordinate 
    targeting system.
 
-  * If your dev team is Down Under and you're finding Retaliation is loosing its 
-    effect, try dipping each missile in roo poo for some added punch :-)
 
   * If your build breaking perpetrator is at point-blank range, for health and safety
     reasons we suggest targeting their keyboard or monitor rather than their head.
@@ -116,6 +114,17 @@ management software) for "coping a few in the head" during testing!
     <a href="http://sourceforge.net/apps/trac/libusb-win32/wiki">libusb-win32</a>.
     This can be a little tricky but if you've mastered CI build scripts then this
     should be easy!
+
+  * If your dev team is Down Under and you're finding Retaliation is loosing its 
+    effect, try dipping each missile in some <a href="http://en.wikipedia.org/wiki/Vegemite">Vegemite</a>
+    for some added punch :-)
+
+### News
+
+  * Great to see Retaliation mashed up with the 
+   <a href="http://www.raspberrypi.org/archives/tag/open-webos">Raspberry Pi</a>. 
+    It's also got a metion in the 
+   <a href="http://www.guardian.co.uk/technology/2012/nov/04/12-things-to-make-raspberry-pi?INTCMP=SRCH">Guardian</a> as the 4th best thing to do with the Pi!
 
 ### Future
 
