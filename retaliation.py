@@ -96,9 +96,11 @@ import usb.util
 COMMAND_SETS = {
     "will" : (
         ("zero", 0), # Zero/Park to know point (bottom-left)
+        ("led", 1), # Turn the LED on
         ("right", 3250),
         ("up", 540),
         ("fire", 4), # Fire a full barrage of 4 missiles
+        ("led", 0), # Turn the LED back off
         ("zero", 0), # Park after use for next time
     ),
     "tom" : (
@@ -166,6 +168,7 @@ def usage():
     print "     fire  - fire <value> times (between 1-4)"
     print "     zero  - park at zero position (bottom-left)"
     print "     pause - pause <value> milliseconds"
+    print "     led   - turn the led on or of (1 or 0)"
     print ""
     print "     <command_set_name> - run/test a defined COMMAND_SET"
     print "             e.g. run:"
@@ -195,6 +198,8 @@ def setup_usb():
 def send_cmd(cmd):
     DEVICE.ctrl_transfer(0x21, 0x09, 0, 0, [0x02, cmd, 0x00,0x00,0x00,0x00,0x00,0x00])
 
+def led(cmd):
+    DEVICE.ctrl_transfer(0x21, 0x09, 0, 0, [0x03, cmd, 0x00,0x00,0x00,0x00,0x00,0x00])
 
 def send_move(cmd, duration_ms):
     send_cmd(cmd)
@@ -218,6 +223,11 @@ def run_command(command, value):
         send_move(LEFT, 8000)
     elif command == "pause" or command == "sleep":
         time.sleep(value / 1000.0)
+    elif command == "led":
+        if value == 0:
+            led(0x00)
+        else:
+            led(0x01)
     elif command == "fire" or command == "shoot":
         if value < 1 or value > 4:
             value = 1
