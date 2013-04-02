@@ -153,6 +153,7 @@ FIRE    = 0x10
 STOP    = 0x20
 
 DEVICE = None
+DEVICE_TYPE = None
 
 def usage():
     print "Usage: retaliation.py [command] [value]"
@@ -179,11 +180,22 @@ def usage():
 
 def setup_usb():
     # Tested only with the Cheeky Dream Thunder
+    # and original USB Launcher
     global DEVICE 
+    global DEVICE_TYPE
+
     DEVICE = usb.core.find(idVendor=0x2123, idProduct=0x1010)
 
     if DEVICE is None:
-        raise ValueError('Missile device not found')
+        DEVICE = usb.core.find(idVendor=0x0a81, idProduct=0x0701)
+        if DEVICE is None:
+            raise ValueError('Missile device not found')
+        else:
+            DEVICE_TYPE = "Original"
+    else:
+        DEVICE_TYPE = "Thunder"
+
+    
 
     # On Linux we need to detach usb HID first
     if "Linux" == platform.system():
@@ -196,10 +208,16 @@ def setup_usb():
 
 
 def send_cmd(cmd):
-    DEVICE.ctrl_transfer(0x21, 0x09, 0, 0, [0x02, cmd, 0x00,0x00,0x00,0x00,0x00,0x00])
+    if "Thunder" == DEVICE_TYPE:
+        DEVICE.ctrl_transfer(0x21, 0x09, 0, 0, [0x02, cmd, 0x00,0x00,0x00,0x00,0x00,0x00])
+    elif "Original" == DEVICE_TYPE:
+        DEVICE.ctrl_transfer(0x21, 0x09, 0x0200, 0, [cmd])
 
 def led(cmd):
-    DEVICE.ctrl_transfer(0x21, 0x09, 0, 0, [0x03, cmd, 0x00,0x00,0x00,0x00,0x00,0x00])
+    if "Thunder" == DEVICE_TYPE:
+        DEVICE.ctrl_transfer(0x21, 0x09, 0, 0, [0x03, cmd, 0x00,0x00,0x00,0x00,0x00,0x00])
+    elif "Original" == DEVICE_TYPE:
+        print("There is no LED on this device")
 
 def send_move(cmd, duration_ms):
     send_cmd(cmd)
